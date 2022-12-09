@@ -10,6 +10,15 @@ export interface IGoods {
   setAddGoodFlag?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface asda {
+  isAddLoading: boolean;
+  isAddError: null | string;
+  isDeleteLoading: boolean;
+  isDeleteError: null | string;
+  isChangeLoading: boolean;
+  isChangeError: null | string;
+  currentID: null | string;
+}
 export interface goodState {
   goods: IGoods[];
   isLoading: boolean;

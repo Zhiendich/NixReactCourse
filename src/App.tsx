@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
-import GoodsList from "./components/GoodsList";
+import GoodsList from "./components/GoodsList.jsx";
 
-function App() {
-  return (
-    <div>
-      <GoodsList />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <GoodsList />
+      </div>
+    );
+  }
 }
-
 export default App;

@@ -17,16 +17,23 @@ const initialState: goodState = {
   isChangeError: null,
   currentID: null,
 };
-
 export const goodReducer = (
   state = initialState,
   action: goodAction
 ): goodState => {
   switch (action.type) {
     case GoodsActionTypes.FETCH_GOODS:
-      return { isLoading: true, isError: null, goods: state.goods };
+      return {
+        isLoading: true,
+        isError: null,
+        goods: state.goods,
+      };
     case GoodsActionTypes.FETCH_GOODS_SUCCESS:
-      return { isLoading: false, isError: null, goods: action.payload };
+      return {
+        isLoading: false,
+        isError: null,
+        goods: action.payload,
+      };
     case GoodsActionTypes.FETCH_GOODS_ERROR:
       return { isLoading: false, isError: action.payload, goods: state.goods };
     case GoodsActionTypes.ADD_GOODS:

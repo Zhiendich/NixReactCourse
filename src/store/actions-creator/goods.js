@@ -1,8 +1,7 @@
-import { GoodsActionTypes, goodAction, IGoods } from "../../types/goods";
-import { Dispatch } from "redux";
+import { GoodsActionTypes } from "../../types/goods";
 import axios from "axios";
 export const fetchGoods = () => {
-  return async (dispatch: Dispatch<goodAction>) => {
+  return async (dispatch) => {
     try {
       dispatch({ type: GoodsActionTypes.FETCH_GOODS });
       const response = await axios.get("http://localhost:8080/goods");
@@ -21,8 +20,8 @@ export const fetchGoods = () => {
   };
 };
 
-export const addGoods = (newGood: IGoods) => {
-  return async (dispatch: Dispatch<goodAction>) => {
+export const addGoods = (newGood) => {
+  return async (dispatch) => {
     try {
       dispatch({ type: GoodsActionTypes.ADD_GOODS });
       const response = await axios.post("http://localhost:8080/goods", newGood);
@@ -41,8 +40,8 @@ export const addGoods = (newGood: IGoods) => {
   };
 };
 
-export const deleteGoods = (id: string) => {
-  return async (dispatch: Dispatch<goodAction>) => {
+export const deleteGoods = (id) => {
+  return async (dispatch) => {
     try {
       dispatch({ type: GoodsActionTypes.DELETE_GOODS, payload: id });
       const response = await axios.delete(`http://localhost:8080/goods/${id}`);
@@ -61,8 +60,8 @@ export const deleteGoods = (id: string) => {
   };
 };
 
-export const changeGoods = (updated: IGoods) => {
-  return async (dispatch: Dispatch<goodAction>) => {
+export const changeGoods = (updated) => {
+  return async (dispatch) => {
     try {
       dispatch({ type: GoodsActionTypes.CHANGE_GOODS, payload: updated.id });
       const response = await axios.put(
